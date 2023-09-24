@@ -59,3 +59,16 @@ table th {
     background-color: #b02e2e;
     color: white;
 }
+
+/* Agrega estilos CSS para los contenedores de gráficos */
+.charts-container {
+    display: flex; /* Utiliza flexbox para organizar los gráficos en una fila */
+    justify-content: space-between; /* Distribuye los gráficos de manera uniforme en la fila */
+}
+
+.chart {
+    width: 30%; /* Establece el ancho de cada gráfico en la fila */
+    margin-right: 10px; /* Agrega un margen derecho entre los gráficos */
+}
+
+/* Ajusta los estilos de los gráficos si es necesario */
