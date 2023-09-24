@@ -25,12 +25,12 @@ function applyFiltersAndGenerateCharts(data) {
     const objectiveFilter = document.getElementById("objectiveFilter").value;
     const riskToleranceFilter = document.getElementById("riskToleranceFilter").value;
 
-    // Aplica los filtros
+    // Aplica los filtros a los datos del archivo CSV
     let filteredData = data.filter((item) => {
         return (
             (!ageFilter || item.Edad == ageFilter) && // Filtrar por edad
-            (!objectiveFilter || item.Perfil === objectiveFilter) && // Filtrar por perfil
-            (!riskToleranceFilter || item.Riesgo === riskToleranceFilter) // Filtrar por riesgo
+            (!objectiveFilter || item["Objetivos de Inversión"] === objectiveFilter) && // Filtrar por perfil
+            (!riskToleranceFilter || item["Tolerancia al Riesgo"] === riskToleranceFilter) // Filtrar por riesgo
         );
     });
 
