@@ -55,7 +55,12 @@
     
         <button onclick=applyFiltersAndGenerateCharts()>Aplicar filtros</button>
     </div>
-
+    
+    <div id="loading" style="display: none;">
+        <div class="loading-animation"></div>
+        Aplicando filtros...
+    </div>
+    
     <div class="charts-container">
         <div class="chart">
             <canvas id="ageChart"></canvas>
