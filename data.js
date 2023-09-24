@@ -68,20 +68,7 @@ function displayTable(data) {
 // Función para generar gráficos
 function generateCharts(data) {
     generateCharts(data);
-    generateAgeBarChart(ages);
-    calculateAgeDistribution(ages);
-    generateProfilePieChart(profiles);
     getChartDataCount(data)
-    generateRiskTolerancePieChart(riskTolerances)
-
-}
-
-function showLoading() {
-    document.getElementById('loading').style.display = "block";
-}
-
-function hideLoading() {
-    document.getElementById('loading').style.display = "none";
 }
 
 

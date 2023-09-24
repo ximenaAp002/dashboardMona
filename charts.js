@@ -3,10 +3,10 @@ function generateCharts(data) {
     const ages = data.map((item) => parseInt(item.Edad));
 
     // Obtén un arreglo de perfiles desde los datos filtrados
-    const profiles = data.map((item) => item["Objetivos de Inversión"]);
+    const profiles = data.map((item) => item.Perfil);
 
     // Obtén un arreglo de tolerancias al riesgo desde los datos filtrados
-    const riskTolerances = data.map((item) => item["Tolerancia al Riesgo"]);
+    const riskTolerances = data.map((item) => item.Riesgo);
 
     // Llama a las funciones para generar los gráficos
     generateAgeBarChart(ages);
