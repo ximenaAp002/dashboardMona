@@ -10,26 +10,6 @@
     <title>Plan de Inversiones</title>
 </head>
 <body>
-    <div class="container">
-        <h1>Información de Inversores</h1>
-        
-        <table>
-            <thead>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Edad</th>
-                    <th>Perfil</th>
-                    <th>Riesgo</th>
-                    <th>A_Favorita</th>
-                    <th>Estado</th>
-                </tr>
-            </thead>
-            <tbody id="data-table">
-                <!-- Aquí se desplegarán los registros de los usuarios -->
-            </tbody>
-        </table>
-    </div>
-
     <div class="filters">
         <label for="ageFilter">Edad:</label>
         <input type="number" id="ageFilter" min="18" max="90" placeholder="Edad personalizada">
@@ -54,6 +34,27 @@
     
         <button onclick="applyFiltersAndGenerateCharts()">Aplicar filtros</button>
     </div>
+
+    <div class="container">
+        <h1>Información de Inversores</h1>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Edad</th>
+                    <th>Perfil</th>
+                    <th>Riesgo</th>
+                    <th>A_Favorita</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <tbody id="data-table">
+                <!-- Aquí se desplegarán los registros de los usuarios -->
+            </tbody>
+        </table>
+    </div>
+
 
     <div class="charts-container">
         <div class="chart">
