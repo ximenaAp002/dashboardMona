@@ -48,12 +48,12 @@ function applyFiltersAndGenerateCharts(data) {
 }
 
 // Función para mostrar datos en la tabla
-function displayTable(data) {
+function displayTable(filteredData) {
     const table = document.getElementById("data-table");
     table.innerHTML = ""; // Limpia la tabla
 
     // Mostrar solo los primeros 5 registros
-    let limitedData = data.slice(0, 5);
+    let limitedData = filteredData.slice(0, 5);
 
     limitedData.forEach((item) => {
         const row = table.insertRow();
