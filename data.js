@@ -1,4 +1,5 @@
 
+// Función para cargar y procesar datos desde el archivo CSV
 function loadDataFromCSV() {
     // Nombre del archivo CSV
     const fileName = "data.csv";
@@ -16,6 +17,31 @@ function loadDataFromCSV() {
         },
     });
 }
+
+// Función para aplicar filtros y generar gráficos
+function applyFiltersAndGenerateCharts(data) {
+    // Obtén los valores seleccionados en los filtros
+    const ageFilter = document.getElementById("ageFilter").value;
+    const objectiveFilter = document.getElementById("objectiveFilter").value;
+    const riskToleranceFilter = document.getElementById("riskToleranceFilter").value;
+
+    // Aplica los filtros
+    let filteredData = data.filter((item) => {
+        return (
+            (!ageFilter || item.Edad == ageFilter) && // Filtrar por edad
+            (!objectiveFilter || item.Perfil === objectiveFilter) && // Filtrar por perfil
+            (!riskToleranceFilter || item.Riesgo === riskToleranceFilter) // Filtrar por riesgo
+        );
+    });
+
+    // Limita los resultados a 20 datos
+    filteredData = filteredData.slice(0, 20);
+
+    // Actualiza la tabla y los gráficos con los datos filtrados
+    displayTable(filteredData);
+    generateCharts(filteredData);
+}
+
 
 // Función para cargar y procesar datos desde el archivo Excel
 function loadDataFromExcel() {
