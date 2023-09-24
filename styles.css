@@ -111,3 +111,30 @@ button:hover {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
+
+#filterButton {
+    background-color: #b02e2e;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#filterButton:hover {
+    background-color: #e8a9a7;
+}
+
+#filterButton:disabled {
+    background-color: #e8a9a7;
+    cursor: not-allowed;
+}
+
+#loading {
+    display: none;
+    text-align: center;
+    margin-top: 20px;
+    color: #b02e2e;
+    font-weight: bold;
+}
