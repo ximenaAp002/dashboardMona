@@ -21,6 +21,8 @@ function loadDataFromCSV() {
 
 // Función para aplicar filtros y generar gráficos
 function applyFiltersAndGenerateCharts(data) {
+    // Muestra el efecto de carga
+    showLoading();
     // Obtén los valores seleccionados en los filtros
     const ageFilter = document.getElementById("ageFilter").value;
     const objectiveFilter = document.getElementById("objectiveFilter").value;
@@ -38,6 +40,9 @@ function applyFiltersAndGenerateCharts(data) {
     // Actualiza la tabla y los gráficos con los datos filtrados
     displayTable(filteredData);
     generateCharts(filteredData);
+
+    // Oculta el efecto de carga después de generar los gráficos y mostrar la tabla
+    hideLoading();    
 }
 
 // Función para mostrar datos en la tabla
@@ -64,6 +69,15 @@ function generateCharts(data) {
     generateRiskTolerancePieChart(riskTolerances)
 
 }
+
+function showLoading() {
+    document.getElementById('loading').style.display = "block";
+}
+
+function hideLoading() {
+    document.getElementById('loading').style.display = "none";
+}
+
 
 // Carga los datos al inicio
 window.onload = loadDataFromCSV;
