@@ -55,11 +55,18 @@
         <button onclick="applyFiltersAndGenerateCharts()">Aplicar filtros</button>
     </div>
 
-    <div class="charts">
-        <canvas id="ageChart"></canvas>
-        <canvas id="objectiveChart"></canvas>
-        <canvas id="riskToleranceChart"></canvas>
+    <div class="charts-container">
+        <div class="chart">
+            <canvas id="ageChart"></canvas>
+        </div>
+        <div class="chart">
+            <canvas id="objectiveChart"></canvas>
+        </div>
+        <div class="chart">
+            <canvas id="riskToleranceChart"></canvas>
+        </div>
     </div>
+    
 
     <!-- Agrega las referencias a los archivos data.js y charts.js -->
     <script src="data.js"></script>
