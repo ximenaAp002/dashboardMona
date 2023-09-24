@@ -29,8 +29,8 @@ function applyFiltersAndGenerateCharts(data) {
     let filteredData = data.filter((item) => {
         return (
             (!ageFilter || item.Edad == ageFilter) && // Filtrar por edad
-            (!objectiveFilter || item["Objetivos de Inversión"] === objectiveFilter) && // Filtrar por perfil
-            (!riskToleranceFilter || item["Tolerancia al Riesgo"] === riskToleranceFilter) // Filtrar por riesgo
+            (!objectiveFilter || item.Perfil === objectiveFilter) && // Filtrar por perfil
+            (!riskToleranceFilter || item.Riesgo === riskToleranceFilter) // Filtrar por riesgo
         );
     });
 
