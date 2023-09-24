@@ -53,13 +53,11 @@
             <option value="Alta">Alta</option>
         </select>
     
-        <button onclick=applyFiltersAndGenerateCharts()>Aplicar filtros</button>
+        <button id="filterButton" onclick=applyFiltersAndGenerateCharts()>Aplicar filtros</button>
     </div>
-    
-    <div id="loading" style="display: none;">
-        <div class="loading-animation"></div>
-        Aplicando filtros...
-    </div>
+
+    <div id="loading" style="display: none;">Cargando...</div>
+
     
     <div class="charts-container">
         <div class="chart">
