@@ -21,8 +21,9 @@ function loadDataFromCSV() {
 
 // Función para aplicar filtros y generar gráficos
 function applyFiltersAndGenerateCharts(data) {
-    // Muestra el efecto de carga
-    showLoading();
+    document.getElementById("loading").style.display = "block";
+    document.getElementById("filterButton").disabled = true;
+    
     // Obtén los valores seleccionados en los filtros
     const ageFilter = document.getElementById("ageFilter").value;
     const objectiveFilter = document.getElementById("objectiveFilter").value;
@@ -41,8 +42,9 @@ function applyFiltersAndGenerateCharts(data) {
     displayTable(filteredData);
     generateCharts(filteredData);
 
-    // Oculta el efecto de carga después de generar los gráficos y mostrar la tabla
-    hideLoading();    
+    document.getElementById("loading").style.display = "none";
+    document.getElementById("filterButton").disabled = false;
+      
 }
 
 // Función para mostrar datos en la tabla
@@ -50,7 +52,10 @@ function displayTable(data) {
     const table = document.getElementById("data-table");
     table.innerHTML = ""; // Limpia la tabla
 
-    data.forEach((item) => {
+    // Mostrar solo los primeros 5 registros
+    let limitedData = data.slice(0, 5);
+
+    limitedData.forEach((item) => {
         const row = table.insertRow();
         for (let key in item) {
             const cell = row.insertCell();
@@ -58,6 +63,7 @@ function displayTable(data) {
         }
     });
 }
+
 
 // Función para generar gráficos
 function generateCharts(data) {
