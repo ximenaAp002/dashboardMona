@@ -43,35 +43,6 @@ function applyFiltersAndGenerateCharts(data) {
 }
 
 
-// Función para cargar y procesar datos desde el archivo Excel
-function loadDataFromExcel() {
-    // Nombre del archivo Excel
-    const fileName = "data.xlsx";
-
-    // Carga el archivo Excel utilizando SheetJS
-    const reader = new FileReader();
-    reader.onload = function (e) {
-        const data = e.target.result;
-        const workbook = XLSX.read(data, { type: "binary" });
-
-        // Procesa los datos
-        const sheetName = workbook.SheetNames[0]; // Supongamos que los datos están en la primera hoja
-        const worksheet = workbook.Sheets[sheetName];
-        const jsonData = XLSX.utils.sheet_to_json(worksheet);
-
-        // Llama a la función de filtrado y generación de gráficos
-        applyFiltersAndGenerateCharts(jsonData);
-    };
-
-    const req = new XMLHttpRequest();
-    req.open("GET", fileName, true);
-    req.responseType = "blob";
-    req.onload = function () {
-        reader.readAsBinaryString(req.response);
-    };
-    req.send();
-}
-
 // Función para aplicar filtros y generar gráficos
 function applyFiltersAndGenerateCharts(data) {
     // Obtén los valores seleccionados en los filtros
@@ -83,8 +54,8 @@ function applyFiltersAndGenerateCharts(data) {
     let filteredData = data.filter((item) => {
         return (
             (!ageFilter || item.Edad === ageFilter) && // Filtrar por edad
-            (!objectiveFilter || item["Objetivos de Inversión"] === objectiveFilter) && // Filtrar por perfil
-            (!riskToleranceFilter || item["Tolerancia al Riesgo"] === riskToleranceFilter) // Filtrar por riesgo
+            (!objectiveFilter || item.Perfil === objectiveFilter) && // Filtrar por perfil
+            (!riskToleranceFilter || item.Riesgo === riskToleranceFilter) // Filtrar por riesgo
         );
     });
 
@@ -109,8 +80,13 @@ function displayTable(data) {
 
 // Función para generar gráficos
 function generateCharts(data) {
-    // Implementa la generación de gráficos aquí utilizando Chart.js
-    // Por ejemplo, un gráfico de barras para la edad y gráfico de pastel para perfil y riesgo.
+    generateCharts(data);
+    generateAgeBarChart(ages);
+    calculateAgeDistribution(ages);
+    generateProfilePieChart(profiles);
+    getChartDataCount(data)
+    generateRiskTolerancePieChart(riskTolerances)
+
 }
 
 // Carga los datos al inicio
