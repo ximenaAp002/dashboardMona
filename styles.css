@@ -72,3 +72,42 @@ table th {
 }
 
 /* Ajusta los estilos de los gráficos si es necesario */
+
+button {
+    background-color: #b02e2e;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #8f2323;
+}
+
+#loading {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 20px 40px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.loading-animation {
+    border: 5px solid #f5eae1;
+    border-top: 5px solid #b02e2e;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
